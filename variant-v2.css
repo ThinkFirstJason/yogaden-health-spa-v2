@@ -25,7 +25,7 @@
   --peach: var(--marigold-soft); --peach-wash: var(--v2-cream-2); --rose-soft: var(--marigold-soft);
   --rose: var(--saffron); --rose-ink: var(--kumkum); --anchor: var(--kumkum); --anchor-deep: var(--turq-deep);
   --anchor-soft: var(--turq-bright); --ink: var(--v2-ink); --ink-soft: var(--v2-ink-soft); --line: var(--v2-line);
-  --glow: linear-gradient(120deg, var(--turq) 0%, var(--turq-deep) 100%); --pink-deep: var(--kumkum); --pink-hot: var(--saffron); --on-pink: #FFF8EC;
+  --glow: radial-gradient(60% 90% at 100% 0%, rgba(120, 230, 220, .45), transparent 70%), linear-gradient(120deg, #149E97 0%, var(--turq) 45%, var(--turq-deep) 100%); --pink-deep: var(--kumkum); --pink-hot: var(--saffron); --on-pink: #FFF8EC;
   --display: "DM Serif Display", "Instrument Serif", Georgia, serif;
   --temple: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400' preserveAspectRatio='none'%3E%3Cpath d='M0 400V150C0 78 104 66 150 0c46 66 150 78 150 150v250Z'/%3E%3C/svg%3E");
   --momenceColorBackground: #FFF8EC; --momenceColorPrimary: 196, 18, 47; --momenceColorWhite: 255, 248, 236; --momenceColorBlack: 43, 26, 16;
@@ -38,7 +38,7 @@ h1, h2 { font-weight: 400; }
 .btn-primary { background: var(--kumkum); border-color: var(--kumkum); color: #FFF8EC; }
 .btn-primary:hover { background: var(--kumkum-deep); border-color: var(--kumkum-deep); }
 .btn { border-radius: 999px; }
-.v2-btn-marigold, .dark a.v2-btn-marigold { background: var(--marigold); color: var(--v2-ink); border: 1px solid var(--marigold); }
+.v2-btn-marigold, .dark a.v2-btn-marigold { background: linear-gradient(180deg, #FFD466 0%, var(--marigold) 60%, #FFA91F 100%); color: var(--v2-ink); border: 1px solid var(--marigold); }
 .v2-btn-marigold:hover, .dark a.v2-btn-marigold:hover { background: #FFF8EC; border-color: #FFF8EC; color: var(--v2-ink); }
 .dark a.v2-btn-marigold:focus-visible { outline-color: #FFF8EC; }
 .v2-btn-ghost { background: transparent; color: #FFF8EC; border: 1px solid rgba(255, 248, 236, .7); }
@@ -47,12 +47,12 @@ h1, h2 { font-weight: 400; }
 .v2-lotus-light { fill: var(--marigold); margin: 0 0 1.25rem; }
 
 /* temple arch: a pointed mandir arch cut from any photo */
-.v2-temple { position: relative; aspect-ratio: 3 / 4; -webkit-mask: var(--temple) center / 100% 100% no-repeat; mask: var(--temple) center / 100% 100% no-repeat; background: var(--marigold); padding: clamp(6px, .7vw, 10px); }
+.v2-temple { position: relative; aspect-ratio: 3 / 4; -webkit-mask: var(--temple) center / 100% 100% no-repeat; mask: var(--temple) center / 100% 100% no-repeat; background: linear-gradient(160deg, #FFE9A0 0%, var(--marigold) 40%, var(--saffron) 100%); padding: clamp(6px, .7vw, 10px); }
 .v2-temple img { width: 100%; height: 100%; object-fit: cover; -webkit-mask: var(--temple) center / 100% 100% no-repeat; mask: var(--temple) center / 100% 100% no-repeat; }
-.v2-temple-turq { background: var(--turq-bright); }
+.v2-temple-turq { background: linear-gradient(160deg, #8DEBE2 0%, var(--turq-bright) 45%, var(--turq) 100%); }
 
 /* ---------- hero ---------- */
-.v2-hero { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr); background: radial-gradient(120% 90% at 85% 10%, var(--turq-bright) 0%, var(--turq) 45%, var(--turq-deep) 100%); color: #FFF8EC; isolation: isolate; }
+.v2-hero { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr); background: radial-gradient(40% 45% at 78% 82%, rgba(255, 255, 255, .26), transparent 70%), radial-gradient(120% 90% at 85% 10%, #45D3C8 0%, var(--turq-bright) 24%, var(--turq) 55%, var(--turq-deep) 100%); color: #FFF8EC; isolation: isolate; }
 .v2-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 22px; background: var(--v2-cream); -webkit-mask: radial-gradient(circle 22px at 50% 0, #0000 97%, #000) 50% 0 / 44px 100% repeat-x; mask: radial-gradient(circle 22px at 50% 0, #0000 97%, #000) 50% 0 / 44px 100% repeat-x; z-index: 3; }
 .v2-hero-text { position: relative; z-index: 3; padding: clamp(3.5rem, 12vw, 6rem) var(--gutter) clamp(2rem, 5vw, 3rem); }
 .v2-kicker { font-weight: 600; font-size: .875rem; letter-spacing: .16em; text-transform: uppercase; color: var(--marigold); margin: 0 0 1rem; }
@@ -62,7 +62,7 @@ h1, h2 { font-weight: 400; }
 .v2-hero-actions { display: flex; flex-wrap: wrap; gap: .85rem 1rem; margin-top: 2rem; }
 .v2-hero-actions .btn:focus-visible { outline-color: #FFF8EC; }
 .v2-hero-visual { position: relative; z-index: 1; display: grid; place-items: center; padding: 1rem var(--gutter) 4rem; }
-.v2-halo { position: absolute; width: min(100%, 38rem); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle closest-side, var(--marigold) 0 80%, transparent 80.5% 85%, var(--saffron) 85.5% 88.5%, transparent 89%); top: 50%; left: 50%; transform: translate(-50%, -54%); opacity: .95; }
+.v2-halo { position: absolute; width: min(100%, 38rem); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle closest-side, #FFF1BF 0%, #FFD45E 38%, var(--marigold) 62% 80%, transparent 80.5% 85%, var(--saffron) 85.5% 88.5%, transparent 89%); top: 50%; left: 50%; transform: translate(-50%, -54%); opacity: .95; }
 .v2-halo::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(var(--marigold-soft) 0 1.4deg, transparent 1.4deg 6deg); -webkit-mask: radial-gradient(circle closest-side, transparent 93%, #000 93.5% 97%, transparent 97.5%); mask: radial-gradient(circle closest-side, transparent 93%, #000 93.5% 97%, transparent 97.5%); opacity: .7; }
 .v2-hero-visual .v2-temple { width: min(76%, 25rem); }
 
@@ -78,7 +78,7 @@ h1, h2 { font-weight: 400; }
 .v2-john p.v2-welcome-close { font-family: var(--display); color: var(--saffron-deep); font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem); line-height: 1.1; margin-top: .9em; }
 
 /* ---------- statement on saffron ---------- */
-.v2-statement { background: linear-gradient(170deg, var(--marigold) 0%, var(--saffron) 100%); padding: clamp(4rem, 8vw, 7rem) var(--gutter); overflow: hidden; }
+.v2-statement { background: radial-gradient(55% 70% at 12% 0%, rgba(255, 255, 255, .5), transparent 70%), radial-gradient(45% 60% at 80% 45%, rgba(255, 244, 210, .6), transparent 70%), linear-gradient(170deg, #FFCE52 0%, var(--marigold) 35%, var(--saffron) 100%); padding: clamp(4rem, 8vw, 7rem) var(--gutter); overflow: hidden; }
 .v2-statement-grid { display: grid; gap: clamp(2.5rem, 5vw, 5rem); grid-template-columns: minmax(0, 1fr); align-items: center; }
 .v2-statement .giant { font-family: var(--display); color: var(--kumkum-deep); font-weight: 400; font-size: clamp(3.25rem, 1.5rem + 5.4vw, 7.5rem); line-height: .95; }
 .v2-statement .giant-copy { color: var(--v2-ink); font-size: 1.125rem; }
@@ -100,11 +100,11 @@ h1, h2 { font-weight: 400; }
 .v2-offer:hover img, .v2-offer:focus-visible img { transform: translateY(-6%); }
 .v2-offer:hover .v2-offer-go, .v2-offer:focus-visible .v2-offer-go { transform: rotate(-45deg); }
 .v2-offer:focus-visible { outline: 3px solid var(--turq); outline-offset: 4px; }
-.v2-o-classes { background: var(--turq); color: #FFF8EC; }
-.v2-o-therapy { background: var(--saffron); color: var(--v2-ink); }
-.v2-o-training { background: var(--marigold); color: var(--v2-ink); }
-.v2-o-healing { background: var(--kumkum); color: #FFF8EC; }
-.v2-o-retreats { background: var(--lotus); color: var(--v2-ink); }
+.v2-o-classes { background: linear-gradient(205deg, #3CC8BE 0%, var(--turq) 50%, var(--turq-deep) 100%); color: #FFF8EC; }
+.v2-o-therapy { background: linear-gradient(205deg, #FFC27A 0%, var(--saffron) 50%, var(--saffron-deep) 100%); color: var(--v2-ink); }
+.v2-o-training { background: linear-gradient(205deg, #FFE48E 0%, var(--marigold) 50%, #F59E1B 100%); color: var(--v2-ink); }
+.v2-o-healing { background: linear-gradient(205deg, #EF4A5C 0%, var(--kumkum) 50%, var(--kumkum-deep) 100%); color: #FFF8EC; }
+.v2-o-retreats { background: linear-gradient(205deg, #FFD3DE 0%, var(--lotus) 50%, #E97795 100%); color: var(--v2-ink); }
 .v2-o-classes img { width: 72%; height: 66%; right: 6%; }
 .v2-o-healing img, .v2-o-retreats img { width: 64%; }
 
@@ -118,7 +118,7 @@ h1, h2 { font-weight: 400; }
 .v2-every .lede { font-family: var(--serif); font-size: 1.4rem; color: var(--kumkum); }
 
 /* ---------- healing center on kumkum ---------- */
-.v2-healing.dark { background: radial-gradient(110% 80% at 0% 0%, #D92B3F 0%, var(--kumkum) 40%, var(--kumkum-deep) 100%); padding: clamp(4rem, 8vw, 7rem) var(--gutter); margin: 0; border-radius: 0; color: #FFF8EC; }
+.v2-healing.dark { background: radial-gradient(60% 40% at 90% 100%, rgba(255, 150, 120, .35), transparent 70%), radial-gradient(110% 80% at 0% 0%, #DE3045 0%, var(--kumkum) 40%, var(--kumkum-deep) 100%); padding: clamp(4rem, 8vw, 7rem) var(--gutter); margin: 0; border-radius: 0; color: #FFF8EC; }
 .v2-healing-top { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); grid-template-columns: minmax(0, 1fr); align-items: center; }
 .v2-healing .healing-head { text-align: left; margin: 0; max-width: 34rem; }
 .v2-healing .healing-head h2 { font-family: var(--display); color: #FFF8EC; font-size: clamp(3rem, 2rem + 4vw, 5.75rem); line-height: .98; margin-bottom: 1.25rem; }
@@ -132,7 +132,7 @@ h1, h2 { font-weight: 400; }
 .v2-healing .service-card:hover, .v2-healing .service-card:focus-visible { background: var(--marigold-soft); }
 
 /* ---------- meet Leeza on marigold ---------- */
-.v2-meet { background: var(--marigold); padding: clamp(4rem, 8vw, 7rem) var(--gutter); }
+.v2-meet { background: radial-gradient(45% 60% at 22% 50%, rgba(255, 255, 255, .55), transparent 70%), radial-gradient(40% 50% at 100% 0%, rgba(255, 236, 170, .7), transparent 70%), linear-gradient(160deg, #FFD15C 0%, var(--marigold) 45%, #F9A41E 100%); padding: clamp(4rem, 8vw, 7rem) var(--gutter); }
 .v2-meet-grid { display: grid; gap: clamp(2.5rem, 5vw, 5rem); grid-template-columns: minmax(0, 1fr); align-items: center; }
 .v2-meet .meet-photo { width: min(100%, 26rem); margin-inline: auto; }
 .v2-meet .meet-photo img { min-height: 0; border-radius: 0; object-position: 50% 30%; }
@@ -152,7 +152,7 @@ h1, h2 { font-weight: 400; }
 .draw { background-image: linear-gradient(var(--saffron), var(--saffron)); }
 
 /* ---------- closing ---------- */
-.v2-closing.dark { position: relative; overflow: hidden; background: radial-gradient(120% 100% at 50% 0%, var(--turq-bright) 0%, var(--turq) 45%, var(--turq-deep) 100%); padding: clamp(4.5rem, 9vw, 7rem) var(--gutter) clamp(4rem, 8vw, 6rem); }
+.v2-closing.dark { position: relative; overflow: hidden; background: radial-gradient(35% 70% at 0% 0%, rgba(140, 240, 230, .45), transparent 70%), radial-gradient(35% 70% at 100% 100%, rgba(140, 240, 230, .35), transparent 70%), radial-gradient(120% 100% at 50% 0%, var(--turq-bright) 0%, var(--turq) 45%, var(--turq-deep) 100%); padding: clamp(4.5rem, 9vw, 7rem) var(--gutter) clamp(4rem, 8vw, 6rem); }
 .v2-closing .wrap { position: relative; z-index: 3; }
 .v2-closing h2 { font-family: var(--display); color: #FFF8EC; }
 .v2-closing .secondary, .v2-closing .secondary a { color: var(--marigold-soft); }
@@ -161,7 +161,7 @@ h1, h2 { font-weight: 400; }
 .site-footer { background: var(--turq-deep); }
 .credentials-text { border-top-color: rgba(255, 248, 236, .25); }
 .legal { color: var(--marigold-soft); }
-.footer-book .btn { background: var(--marigold); border-color: var(--marigold); color: var(--v2-ink); }
+.footer-book .btn { background: linear-gradient(180deg, #FFD466 0%, var(--marigold) 60%, #FFA91F 100%); border-color: var(--marigold); color: var(--v2-ink); }
 .mobile-bar { background: var(--kumkum); }
 
 /* ---------- motion ---------- */
@@ -199,6 +199,8 @@ h1, h2 { font-weight: 400; }
   .v2-every .every-panel { padding: 0 var(--gutter) 0 0; max-width: 40rem; }
   .v2-pill { margin-right: 0; }
   .v2-healing-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
+  .v2-healing.dark { background: radial-gradient(40% 55% at 76% 30%, rgba(255, 150, 120, .4), transparent 70%), radial-gradient(110% 80% at 0% 0%, #DE3045 0%, var(--kumkum) 40%, var(--kumkum-deep) 100%); }
+  .v2-hero { background: radial-gradient(34% 55% at 76% 50%, rgba(255, 255, 255, .28), transparent 70%), radial-gradient(120% 90% at 85% 10%, #45D3C8 0%, var(--turq-bright) 24%, var(--turq) 55%, var(--turq-deep) 100%); }
   .v2-meet-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
 }
 @media (prefers-reduced-motion: reduce) {
