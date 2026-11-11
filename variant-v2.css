@@ -179,10 +179,15 @@ h1, h2 { font-weight: 400; }
 }
 @media (min-width: 62rem) {
   .v2-hero { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); min-height: min(calc(100svh - 7rem), 54rem); }
-  .v2-hero-text { display: flex; flex-direction: column; justify-content: center; padding: 4rem 0 5rem var(--gutter); }
-  .v2-hero-visual { padding: 4rem 2rem 4.5rem; }
+  .v2-hero-text { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 6svh, 4rem) 0 clamp(2.75rem, 8svh, 5rem) var(--gutter); }
+  .v2-hero-visual { padding: clamp(2rem, 6svh, 4rem) 2rem clamp(2.5rem, 7svh, 4.5rem); }
   .v2-hero-text { z-index: 1; }
-  .v2-hero-visual .v2-temple { width: min(80%, 26rem); }
+  /* scale with viewport height too, so short laptop screens keep the buttons on screen */
+  .v2-hero .hero-title { font-size: clamp(3.75rem, min(2rem + 8.5vw, 34svh - 9rem), 10.5rem); }
+  .v2-hero-lede { font-size: clamp(1.15rem, min(1.05rem + .8vw, 3.4svh), 1.75rem); margin-top: clamp(1rem, 2.5svh, 1.5rem); }
+  .v2-hero-actions { margin-top: clamp(1.25rem, 3svh, 2rem); }
+  .v2-hero-visual .v2-temple { width: min(80%, 26rem, 70svh - 9rem); }
+  .v2-halo { width: min(100%, 38rem, 102svh - 13rem); }
   .v2-welcome-grid { grid-template-columns: 20rem minmax(0, 1fr); gap: 5rem; max-width: 76rem; }
   .v2-statement-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
   .v2-statement .giant-copy { display: block; }
